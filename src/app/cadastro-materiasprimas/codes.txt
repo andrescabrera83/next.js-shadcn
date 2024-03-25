@@ -1,0 +1,36 @@
+category: z.enum(["Carnes", "Farinhas", "Hortifruti", "Mercearia", "Misturas", "Ovos", "Queijos"]),
+  gasto_medio: z.coerce.number().positive()
+
+  tempo_entrega: z.coerce.number().positive(),
+  praco_pagamento: z.coerce.number().positive(),
+  dia_pedido: z.enum(["Seg", "Ter", "Quar", "Quin", "Sex", "Sab"]),
+  nome_vendedor: z.string().min(2).max(50),
+  contato_tel_forn: z.string().min(5).max(4),
+  email_forn: z.string().max(75)
+
+  LQExlLE8C8MBy8E3 //SUPABASE
+
+
+
+
+    //OBJECT TO RETRIEVE FORNECEDOR INFORMATION
+
+  const [ObjetoFornecedor, setObjetoFornecedor] = useState<{
+    id: number,
+    fornecedor_name: string,
+    tempo_entrega: number,
+    prazo_pagamento: number,
+    dia_pedido: "Segunda" | "Terça" | "Quarta" | "Quinta" | "Sexta" | "Sábado",
+    nome_vendedor: string,
+    contato_tel_vendedor: string,
+    email_vendedor: string
+  }>({
+    id: 0,
+    fornecedor_name: '',
+    tempo_entrega: 0,
+    prazo_pagamento: 0,
+    dia_pedido: "Segunda",
+    nome_vendedor: '',
+    contato_tel_vendedor: '',
+    email_vendedor: ''
+  });
